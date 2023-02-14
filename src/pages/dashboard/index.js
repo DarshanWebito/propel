@@ -6,8 +6,10 @@ import {
     Divider,
     Grid,
     IconButton,
+    InputAdornment,
     Toolbar,
     Typography,
+
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -16,6 +18,15 @@ import DragHandleIcon from "@mui/icons-material/DragHandle";
 import GridViewIcon from "@mui/icons-material/GridView";
 import StarIcon from '@mui/icons-material/Star';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import logo1 from '../../logo.png';
+import img from '../../Chart.png';
+import Image from "next/image";
+import TextFieldComponent from "@/Component/TextFieldComponent";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import InputAdornment from "@mui/material/InputAdornment";
+import ButtonComponent from "@/Component/ButtonComponent";
+
+
 const Index = () => {
     return (
         <React.Fragment>
@@ -53,53 +64,25 @@ const Index = () => {
                     alignItems="center"
                     gap={5}
                 >
-                    <Typography variant="h6" textAlign={"center"}>
+
+                    <Typography variant="h6" className="dash">
+                        <Image src={logo1} alt="login" />
+                        <br />
                         Dashboard
                     </Typography>
-                    <Box
-                        height={150}
-                        width={150}
-                        bgcolor={"#efefef"}
-                        borderRadius={5}
-                        display="flex"
-                        alignItems="center"
-                        justifyContent={"center"}
-                    >
-                        <img
-                            src={`https://media.istockphoto.com/id/828088276/vector/qr-code-illustration.jpg?s=2048x2048&w=is&k=20&c=W87vGWUh_Aq6pvQ-nMFyprw5JSrEi_vZXWlHJUkV5jk=`}
-                            alt={"no image"}
-                            height={100}
-                            width={100}
-                            style={{ borderRadius: "10px" }}
-                        />
-                    </Box>
-                </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    display="flex"
-                    justifyContent={"center"}
-                    flexDirection={"column"}
-                    alignItems="center"
-                    gap={2}
+                    <Typography variant="h5" className="title">
+                        Welcome to Propel!
+                    </Typography>
+                    <Divider style={{ width: "90%", marginTop: "-10px" }} />
 
-                >
-                    <Typography variant="h6" textAlign={"center"}>
-                        Hey John!
-                    </Typography>
-                    <Typography variant="body2" textAlign={"center"}>
-                        WelCome to prople! Here is the QR oed to request for reviews from
-                        the customer`
-                    </Typography>
-                    <Divider style={{ width: "60%" }} />
-                </Grid>
-                <Grid item xs={12}>
                     <Box display="flex" justifyContent={"space-between"} >
-                        <Typography>Last 30 dyas</Typography>
-                        <GridViewIcon />
+                        <Typography className="title_1">Last 30 dyas</Typography>
                     </Box>
+
                 </Grid>
             </Grid>
+
+
             <Grid container spacing={1} mt={1} p={2}>
                 <Grid item xs={12} sx={{ boxShadow: 3 }} display='flex' borderRadius={2} p={1}>
                     <Grid xs={6}>
@@ -119,11 +102,11 @@ const Index = () => {
                         </Box>
                     </Grid>
                     <Grid xs={6}>
-                        <img
-                            src={`https://www.perkins.org/wp-content/uploads/2022/07/Amazon_1.png`}
+                        <Image
+                            src={img}
                             alt={"no image"}
-                            height={110}
-                            width={180}
+                            height={100}
+                            width={170}
                         />
 
                     </Grid>
@@ -131,7 +114,7 @@ const Index = () => {
             </Grid>
 
             <Grid container mt={1} display="flex" justifyContent={"space-evenly"}>
-                <Grid item xs={5.5} backgroundColor='#fef6cf' p={1} borderRadius={2}>
+                <Grid item xs={5.5} backgroundColor='#fef6cf' p={1} borderRadius={2} padding={2}>
                     <Box display='flex' gap={2} alignItems={"center"}>
                         <StarIcon />
                         <Box display={'flex'} flexDirection='column'>
@@ -147,7 +130,7 @@ const Index = () => {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={5.5} backgroundColor='#e9e9e9' p={1} borderRadius={2} >
+                <Grid item xs={5.5} backgroundColor='#e9e9e9' p={1} borderRadius={2} padding={2}>
                     <Box display='flex' gap={2} alignItems={"center"} >
                         <StarIcon />
                         <Box display={'flex'} flexDirection='column'>
@@ -165,6 +148,193 @@ const Index = () => {
                 </Grid>
             </Grid>
 
+            <Box display={"flex"} alignItems={"center"} height={"60vh"}>
+                <Grid container spacing={2} p={2}>
+                    <Grid item sx={12} md={12}>
+                        <TextFieldComponent
+                            id="fullWidth"
+                            variant="outlined"
+                            placeholder="Name:"
+                            name="name"
+                            // value={input.name}
+                            // onChange={(e) => onChange(e)}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment
+                                        position="start"
+                                        sx={{ display: "flex", alignItems: "center" }}
+                                    >
+                                        {/* <AccountBoxIcon
+                                            sx={{ marginRight: "10px", color: "#c9ba7d" }}
+                                        /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{
+                                backgroundColor: "#f1f1f1",
+                                borderRadius: "100px",
+                                border: "none",
+                                "& fieldset": { border: "none" },
+                            }}
+                        />
+                        {/* {error.name && (
+                            <Typography
+                                variant="caption"
+                                sx={{ color: "red", marginLeft: "20px" }}
+                            >
+                                {error.name}
+                            </Typography>
+                        )} */}
+                    </Grid>
+                    <Grid item sx={12} md={12}>
+                        <TextFieldComponent
+                            id="fullWidth"
+                            variant="outlined"
+                            placeholder="Email:"
+                            name="email"
+                            // value={input.email}
+                            // onChange={(e) => onChange(e)}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment
+                                        position="start"
+                                        sx={{ display: "flex", alignItems: "center" }}
+                                    >
+                                        {/* <EmailIcon sx={{ marginRight: "10px", color: "#c9ba7d" }} /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{
+                                backgroundColor: "#f1f1f1",
+                                borderRadius: "100px",
+                                border: "none",
+                                "& fieldset": { border: "none" },
+                            }}
+                        />
+                        {/* {error.email && (
+                            <Typography
+                                variant="caption"
+                                sx={{ color: "red", marginLeft: "20px" }}
+                            >
+                                {error.email}
+                            </Typography>
+                        )} */}
+                    </Grid>
+
+                    <Grid item sx={12} md={12}>
+                        <TextFieldComponent
+                            id="fullWidth"
+                            variant="outlined"
+                            placeholder="Phone"
+                            name="phone"
+                            // value={input.phone}
+                            // onChange={(e) => onChange(e)}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment
+                                        position="start"
+                                        sx={{ display: "flex", alignItems: "center" }}
+                                    >
+                                        {/* <LocalPhoneIcon
+                                            sx={{ marginRight: "10px", color: "#c9ba7d" }}
+                                        /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{
+                                backgroundColor: "#f1f1f1",
+                                borderRadius: "100px",
+                                border: "none",
+                                "& fieldset": { border: "none" },
+                            }}
+                        />
+                        {/* {error.phone && (
+                            <Typography
+                                variant="caption"
+                                sx={{ color: "red", marginLeft: "20px" }}
+                            >
+                                {error.phone}
+                            </Typography>
+                        )} */}
+                    </Grid>
+
+                    <Grid item sx={12} md={12}>
+                        <TextFieldComponent
+                            id="fullWidth"
+                            variant="outlined"
+                            name="address"
+                            placeholder="Address:"
+                            // value={input.address}
+                            // onChange={(e) => onChange(e)}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment
+                                        position="start"
+                                        sx={{ display: "flex", alignItems: "center" }}
+                                    >
+                                        {/* <MapsHomeWorkIcon
+                                            sx={{ marginRight: "10px", color: "#c9ba7d" }}
+                                        /> */}
+                                    </InputAdornment>
+                                ),
+                            }}
+                            sx={{
+                                backgroundColor: "#f1f1f1",
+                                borderRadius: "100px",
+                                border: "none",
+                                "& fieldset": { border: "none" },
+                            }}
+                        />
+                        {/* {error.address && (
+                            <Typography variant="caption"
+                                sx={{ color: "red", marginLeft: "20px" }}
+                            >
+                                {error.address}
+                            </Typography>
+                        )} */}
+                    </Grid>
+                    <Grid
+                        item
+                        sx={6} md={12}
+                        gap={2}
+                        display="flex"
+                        marginTop={"15px"}
+
+                    >
+                        <ButtonComponent
+                            variant="contained"
+                            fullWidth
+                            size="small"
+                            // onClick={() => handalSubmit()}
+                            sx={{
+                                backgroundColor: "#1D252D",
+                                color: "white",
+                                borderRadius: "42px",
+                                padding: "15px",
+                            }}
+                            title="Request via Text "
+                        />
+
+                        <ButtonComponent
+                            variant="contained"
+                            fullWidth
+                            size="small"
+                            // onClick={() => handalSubmit()}
+                            sx={{
+                                backgroundColor: "#1D252D",
+                                color: "white",
+                                borderRadius: "42px",
+                                padding: "15px",
+                            }}
+                            title="Request via QR "
+                        />
+                    </Grid>
+                </Grid>
+            </Box>
+
+            <Typography display='flex' justifyContent={"center"} color="#F13030">
+                Error in sending message!
+            </Typography>
         </React.Fragment>
     );
 };
