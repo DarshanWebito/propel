@@ -10,6 +10,7 @@ import {
     Toolbar,
     Typography,
 
+
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -20,11 +21,17 @@ import StarIcon from '@mui/icons-material/Star';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import logo1 from '../../logo.png';
 import img from '../../Chart.png';
+import img5 from '../../Qr.png';
+import img6 from '../../star.png';
 import Image from "next/image";
 import TextFieldComponent from "@/Component/TextFieldComponent";
+import EmailIcon from "@mui/icons-material/Email";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 // import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 // import InputAdornment from "@mui/material/InputAdornment";
 import ButtonComponent from "@/Component/ButtonComponent";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
 
 
 const Index = () => {
@@ -83,9 +90,9 @@ const Index = () => {
             </Grid>
 
 
-            <Grid container spacing={1} mt={1} p={2}>
-                <Grid item xs={12} sx={{ boxShadow: 3 }} display='flex' borderRadius={2} p={1}>
-                    <Grid xs={6}>
+            <Grid container spacing={1} mt={1} p={2} paddingLeft={3}>
+                <Grid item xs={12} sx={{ boxShadow: 3 }} display='flex' borderRadius={2} p={1} padding={1}>
+                    <Grid xs={6} padding={1}>
                         <Box display='flex' gap={2} alignItems={"center"}>
                             <StarIcon />
                             <Box display={'flex'} flexDirection='column'>
@@ -148,7 +155,10 @@ const Index = () => {
                 </Grid>
             </Grid>
 
-            <Box display={"flex"} alignItems={"center"} height={"60vh"}>
+            <Typography display='flex' justifyContent={"center"} color="#777777" fontSize={"14px"} marginTop={"20px"}>
+                Please enter customer details to request for a Review
+            </Typography>
+            <Box display={"flex"} alignItems={"center"} height={"55vh"}>
                 <Grid container spacing={2} p={2}>
                     <Grid item sx={12} md={12}>
                         <TextFieldComponent
@@ -164,9 +174,9 @@ const Index = () => {
                                         position="start"
                                         sx={{ display: "flex", alignItems: "center" }}
                                     >
-                                        {/* <AccountBoxIcon
+                                        <AccountBoxIcon
                                             sx={{ marginRight: "10px", color: "#c9ba7d" }}
-                                        /> */}
+                                        />
                                     </InputAdornment>
                                 ),
                             }}
@@ -200,7 +210,7 @@ const Index = () => {
                                         position="start"
                                         sx={{ display: "flex", alignItems: "center" }}
                                     >
-                                        {/* <EmailIcon sx={{ marginRight: "10px", color: "#c9ba7d" }} /> */}
+                                        <EmailIcon sx={{ marginRight: "10px", color: "#c9ba7d" }} />
                                     </InputAdornment>
                                 ),
                             }}
@@ -235,9 +245,9 @@ const Index = () => {
                                         position="start"
                                         sx={{ display: "flex", alignItems: "center" }}
                                     >
-                                        {/* <LocalPhoneIcon
+                                        <LocalPhoneIcon
                                             sx={{ marginRight: "10px", color: "#c9ba7d" }}
-                                        /> */}
+                                        />
                                     </InputAdornment>
                                 ),
                             }}
@@ -272,9 +282,9 @@ const Index = () => {
                                         position="start"
                                         sx={{ display: "flex", alignItems: "center" }}
                                     >
-                                        {/* <MapsHomeWorkIcon
+                                        <MapsHomeWorkIcon
                                             sx={{ marginRight: "10px", color: "#c9ba7d" }}
-                                        /> */}
+                                        />
                                     </InputAdornment>
                                 ),
                             }}
@@ -308,9 +318,10 @@ const Index = () => {
                             // onClick={() => handalSubmit()}
                             sx={{
                                 backgroundColor: "#1D252D",
-                                color: "white",
+                                color: "FFFFFF",
                                 borderRadius: "42px",
                                 padding: "15px",
+                                fontWeight: "600",
                             }}
                             title="Request via Text "
                         />
@@ -322,9 +333,10 @@ const Index = () => {
                             // onClick={() => handalSubmit()}
                             sx={{
                                 backgroundColor: "#1D252D",
-                                color: "white",
+                                color: "FFFFFF",
                                 borderRadius: "42px",
                                 padding: "15px",
+                                fontWeight: "600",
                             }}
                             title="Request via QR "
                         />
@@ -332,10 +344,28 @@ const Index = () => {
                 </Grid>
             </Box>
 
-            <Typography display='flex' justifyContent={"center"} color="#F13030">
+            <Typography display='flex' justifyContent={"center"} color="#F13030" fontSize={"14px"} fontWeight={600}>
                 Error in sending message!
             </Typography>
+
+            <Grid xs={6}>
+                <Box backgroundColor={"grey"}>
+                    <Image
+                        src={img6}
+                        alt={"no image"} />
+                    <Box>
+                        <Image
+                            src={img5}
+                            alt={"no image"}
+                        />
+                    </Box>
+                </Box>
+
+
+
+            </Grid>
         </React.Fragment>
+
     );
 };
 
